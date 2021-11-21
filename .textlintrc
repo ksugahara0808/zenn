@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "preset-ja-spacing": true,
+    "preset-ja-technical-writing": {
+      "no-exclamation-question-mark": {
+        "allowHalfWidthExclamation": true,
+        "allowFullWidthExclamation": true,
+        "allowHalfWidthQuestion": true,
+        "allowFullWidthQuestion": true
+      },
+      "ja-no-successive-word": {
+        "allow": [
+          "/…/"
+        ]
+      }
+    },
+    "preset-japanese": true
+  }
+}
