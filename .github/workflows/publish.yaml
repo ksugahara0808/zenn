@@ -1,0 +1,18 @@
+on:
+  schedule:
+    - cron: '1 * * * *'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Publish articles
+        uses: kyoh86/zenn-auto-publish-action@v0.0.4
+      - name: Push posts
+        run: |
+          git config user.email "${{ github.event_name }}@${{github.repository_owner}}"
+          git config user.name "${{ github.event_name }}"
+          git commit -am 'Publish'
+          git push
